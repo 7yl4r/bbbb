@@ -1,4 +1,4 @@
-The inverter used is the Victron MultiPlus-ii.
+The inverter used is the Victron MultiPlus-II TODO: should this be the 3k (30A?) or a larger one?.
 
 Multiplus-II can be installed in parallel to upgrade the system later (is this multiphase? I don't know how to wire this) [^2]
 
