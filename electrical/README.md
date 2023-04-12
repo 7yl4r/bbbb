@@ -7,21 +7,32 @@ graph TD
 classDef todo fill:#a00
 
 SHORE((shore power))  
-SHORE -.0g 0m solid copper.-> T1{{120VAC->12V}} -.?.->BATT
-SHORE --> SWITCH:::todo
-SHORE --?--> T2{{120VAC->12V}} --?--> BATT2
-
 BATT[(12V battery bank)]
-BATT-.?.->INVERT:::todo
-BATT-.?.->LOAD12[12V load]
+INVERT{{MultiPlus-II inverter+switcher}}
+SOLAR[[solar \n panels]]:::todo
+BMS:::todo
+T1{{included charger hookup 120VAC->12V}}
+T2{{trickle charger 120VAC->12V}} 
+LOAD120[120V Distributor]
+MPPT{{MPPT}}:::todo
+
+SHORE -.0g 0m solid copper.-> T1 -.?.->BATT
+SHORE --> INVERT:::todo
+SHORE --?--> T2 --?--> BATT2
+
+BATT
+  -.?.->INVERT:::todo
+BATT
+  -.?.->LOAD12[12V load]
 
 BATT2[(12V Starter Batteries)]
 
-INVERT{{12V->120VAC}}
-INVERT.->SWITCH{{?}}.->LOAD120[120V load]
+INVERT-.?.->LOAD120
 
-SOLAR[[solar \n panels]]:::todo
-SOLAR-->MPPT{{MPPT}}:::todo-->BATT
+SOLAR-->MPPT-->BATT
+
+BMS  -.?.->BATT
+  
 ```
 
 ## useful links
