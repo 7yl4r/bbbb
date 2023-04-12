@@ -8,11 +8,11 @@ classDef todo fill:#a00
 
 SHORE((shore power))  
 BATT[(12V battery bank)]
-INVERT{{MultiPlus-II inverter+switcher}}
+INVERT{{MultiPlus-II \n 12V->120AC \n inverter+switcher}}
 SOLAR[[solar \n panels]]:::todo
 BMS:::todo
-T1{{included charger hookup 120VAC->12V}}
-T2{{trickle charger 120VAC->12V}} 
+T1{{included charger hookup \n 120VAC->12V}}
+T2{{trickle charger \n 120VAC->12V}} 
 LOAD120[120V Distributor]
 MPPT{{MPPT}}:::todo
 
