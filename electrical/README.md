@@ -1,5 +1,5 @@
 # bbbb
-big blue bus build
+The electrical system is designed using the "US-Van-Manual-&-Drawing-VEBus-BMS-V2-MultiPlus-II-3kVA-12V-120V-60Hz.pdf" as the primary guide.
 
 ```mermaid
 graph TD
@@ -7,32 +7,36 @@ graph TD
 classDef todo fill:#a00
 
 SHORE((shore power))  
-BATT[(12V battery bank)]
+BATT_BANK[(12V battery bank)]
 INVERT{{MultiPlus-II \n 12V->120AC \n inverter+switcher}}
-SOLAR[[solar \n panels]]:::todo
-BMS:::todo
-T1{{included charger hookup \n 120VAC->12V}}
-T2{{trickle charger \n 120VAC->12V}} 
-LOAD120[120V Distributor]
-MPPT{{MPPT}}:::todo
+%% BMS_t2{{included charger hookup \n 120VAC->12V}}
+%% BMS_t1{{trickle charger \n 120VAC->12V}} 
+dist120[120V Dist Panel]
+%% MPPT{{MPPT}}:::todo
+%% SOLAR[[solar \n panels]]:::todo
+%% BMS{{fancy BMS}}:::todo
+%% BATT2[(12V Starter Batteries)]
 
-SHORE -.0g 0m solid copper.-> T1 -.?.->BATT
-SHORE --> INVERT:::todo
-SHORE --?--> T2 --?--> BATT2
+%% SHORE -.?g ?m solid copper.-> T1 -.?.->BATT
+%% SHORE --?--> T2 --?--> BATT2
 
-BATT
-  -.?.->INVERT:::todo
-BATT
-  -.?.->LOAD12[12V load]
+SHORE -- "[50A] 2m 6g" --> F30:::todo --> INVERT:::todo
+INVERT -- "[50A] 1m 6g" --> dist120:::todo
 
-BATT2[(12V Starter Batteries)]
+dist120 --> aircon
+dist120 --> lights
+dist120 --> kitchen_appliances
 
-INVERT-.?.->LOAD120
+%% === 12V system
+%% BMS  -.?.->BATT
+%% BATT
+%%   -.?.->INVERT:::todo
+%% BATT
+%%   -.?.->LOAD12[12V load]
 
-SOLAR-->MPPT-->BATT
 
-BMS  -.?.->BATT
-  
+
+%% SOLAR-->MPPT-->BATT
 ```
 
 ## useful links
