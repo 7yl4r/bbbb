@@ -1,3 +1,5 @@
+overall length 24"
+
 * rear emergency door opening 53.5" x 38"[1]
 * Outside left and right mirrors, 6 1/2" x 10" flat and 6 1/2" x 10" convex with 7" x 13" fender-mounted crossview mirrors.[1]
 * One-piece 14 gauge post and roof bows 1 7/8" deep[1]
